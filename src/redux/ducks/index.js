@@ -1,7 +1,7 @@
-import jwt from './jwt'
+import login from './login'
 
 const ducks = {
-  jwt
+  login
 }
 
 export default ducks

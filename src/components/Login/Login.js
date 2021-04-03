@@ -1,6 +1,8 @@
 import { useMutation } from '@apollo/client'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import loginMutation from '../../graphql/mutations/login'
+import { guardaUsuario } from '../../redux/ducks/login'
 import './Login.css'
 
 const Login = () => {
@@ -8,11 +10,15 @@ const Login = () => {
   const [usuario, setUsuario] = useState()
   const [password, setPassword] = useState()
   const [loginMutate, { loading: loginLoading, error: loginError }] = useMutation(loginMutation)
+  const dispatch = useDispatch()
 
   const login = e => {
     e.preventDefault()
     loginMutate({ variables: { usuario, password } })
-      .then(console.log)
+      .then(({ data }) => {
+        console.log(data)
+        dispatch(guardaUsuario(data.login))
+      })
       .catch(err => console.error(err))
   }
 

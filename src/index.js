@@ -6,9 +6,11 @@ import App from './components/App/App'
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { ApolloProvider } from '@apollo/react-hooks'
+
+import { Provider } from 'react-redux'
 import store from './redux/store'
 
-const getToken = () => store.getState().jwt.jwt
+const getToken = () => store.getState().login.jwt
 
 const authLink = setContext((_, { headers }) => {
   const token = getToken()
@@ -43,7 +45,9 @@ ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <BrowserRouter>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>,
