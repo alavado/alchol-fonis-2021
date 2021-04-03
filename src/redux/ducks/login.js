@@ -6,7 +6,6 @@ const guardarUsuario = 'login/guardarUsuario'
 const defaultState = {}
 
 export default function reducer(state = defaultState, action = {}) {
-  console.log(action.payload)
   switch (action.type) {
     case guardarUsuario: {
       return {

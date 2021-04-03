@@ -1,0 +1,41 @@
+.Login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	font-family: 'Noto Sans JP', sans-serif;
+  flex-direction: column;
+}
+
+.Login__logo {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.Login__formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  flex: 2;
+}
+
+.Login__label {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+.Login__input {
+  font-size: 2rem;
+  padding: .5rem;
+}
+
+.Login__boton {
+  font-size: 2rem;
+  height: 4rem;
+  border: none;
+  border-radius: 9in;
+}

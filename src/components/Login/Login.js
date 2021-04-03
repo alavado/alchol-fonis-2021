@@ -15,25 +15,23 @@ const Login = () => {
   const login = e => {
     e.preventDefault()
     loginMutate({ variables: { usuario, password } })
-      .then(({ data }) => {
-        console.log(data)
-        dispatch(guardaUsuario(data.login))
-      })
+      .then(({ data }) => dispatch(guardaUsuario(data.login)))
       .catch(err => console.error(err))
   }
 
   return (
-    <div>
-      <form onSubmit={login}>
-        <label>
+    <div className="Login">
+      <h1 className="Login__logo">Demo FONIS 2021</h1>
+      <form className="Login__formulario" onSubmit={login}>
+        <label className="Login__label">
           Usuario:
-          <input onChange={e => setUsuario(e.target.value)} />
+          <input className="Login__input" onChange={e => setUsuario(e.target.value)} />
         </label>
-        <label>
+        <label className="Login__label">
           Contraseña:
-          <input type="password" onChange={e => setPassword(e.target.value)} />
+          <input className="Login__input" type="password" onChange={e => setPassword(e.target.value)} />
         </label>
-        <button type="submit">Ingresar</button>
+        <button className="Login__boton" type="submit">Ingresar</button>
         {loginLoading && 'Ingresando...'}
         {loginError && 'Usuario o contraseña incorrectos'}
       </form>
