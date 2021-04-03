@@ -50,8 +50,9 @@ a {
   color: inherit;
 }
 
-*, *::after, *::before {
+*, *::after, *::before, body {
 	box-sizing: border-box;
+	font-family: 'Noto Sans JP', sans-serif;
 }
 
 :root {

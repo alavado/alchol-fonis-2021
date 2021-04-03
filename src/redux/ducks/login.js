@@ -1,37 +1,24 @@
 import { decode } from 'jsonwebtoken'
 
-const limpiarToken = 'login/limpiarToken'
-const guardarUsuario = 'login/guardarUsuario'
 
-const defaultState = {}
+import { createSlice } from '@reduxjs/toolkit'
 
-export default function reducer(state = defaultState, action = {}) {
-  switch (action.type) {
-    case guardarUsuario: {
-      return {
-        ...state,
-        jwt: action.payload.jwt,
-        id: decode(action.payload.jwt).id,
-        nombre: action.payload.user.username,
-        email: action.payload.user.email
-      }
-    }
-    case limpiarToken: {
-      return {
-        ...state,
-        jwt: undefined
-      }
-    }
-    default: {
-      return state
+const loginSlice = createSlice({
+  name: 'login',
+  initialState: {},
+  reducers: {
+    guardaUsuario(state, action) {
+      state.jwt = action.payload.jwt
+      state.id = decode(action.payload.jwt).id
+      state.nombre = action.payload.user.username
+      state.email = action.payload.user.email
+    },
+    cierraLaSesion(state, action) {
+      state.jwt = undefined
     }
   }
-}
+})
 
-export const cierraLaSesion = () => {
-  return { type: limpiarToken }
-}
+export const { guardaUsuario, cierraLaSesion } = loginSlice.actions
 
-export const guardaUsuario = usuario => {
-  return { type: guardarUsuario, payload: usuario }
-}
+export default loginSlice.reducer

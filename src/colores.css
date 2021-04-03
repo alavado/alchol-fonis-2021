@@ -1,0 +1,8 @@
+:root {
+  --color-principal: rgb(235, 0, 50);
+  --color-texto: #212121;
+}
+
+*, *::before, *::after {
+  color: var(--color-texto);
+}

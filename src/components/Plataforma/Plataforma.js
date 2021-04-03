@@ -1,27 +1,27 @@
-import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Route, Switch } from 'react-router'
-import { cierraLaSesion } from '../../redux/ducks/login'
 import AcercaDe from './AcercaDe'
 import BarraSuperior from './BarraSuperior'
-
+import Inicio from './Inicio'
+import Menu from './Menu'
 import './Plataforma.css'
 
 const Plataforma = () => {
 
-  const dispatch = useDispatch()
+  const { visible } = useSelector(state => state.menu)
 
   return (
     <div className="Plataforma">
+      {visible && <Menu />}
       <BarraSuperior />
       <Switch>
         <Route path="/acerca">
           <AcercaDe />
         </Route>
         <Route>
-          <div>Inicio</div>
+          <Inicio />
         </Route>
       </Switch>
-      <button onClick={() => dispatch(cierraLaSesion())}>Cerrar sesión</button>
     </div>
   )
 }

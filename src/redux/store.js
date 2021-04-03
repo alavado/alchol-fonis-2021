@@ -1,8 +1,13 @@
-import { combineReducers, createStore } from 'redux'
-import reducer from './ducks'
+import { createStore, applyMiddleware } from 'redux'
+import { save, load } from 'redux-localstorage-simple'
+import rootReducer from './ducks/index'
 
-const store = createStore(
-  combineReducers(reducer),
-)
+// los que se guardan en el localStorage
+// const states = ['opciones', 'login', 'encuestas']
+const states = []
+
+const createStoreWithMiddleware = applyMiddleware(save({ states }))(createStore)
+
+const store = createStoreWithMiddleware(rootReducer, load({ states }))
 
 export default store

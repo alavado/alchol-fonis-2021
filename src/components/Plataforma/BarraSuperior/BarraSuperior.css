@@ -1,4 +1,39 @@
 .BarraSuperior {
   display: flex;
+  align-items: center;
+  background-color: var(--color-principal);
+  color: white;
+  height: 7rem;
+  padding: 0 3rem 0 1.5rem;
   justify-content: space-between;
+}
+
+.BarraSuperior__izquierda {
+  display: flex;
+  align-items: center;
+}
+
+.BarraSuperior__boton_menu {
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.BarraSuperior__icono_menu {
+  font-size: 5rem;
+  fill: white;
+}
+
+.BarraSuperior__titulo {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-left: 3rem;
+  color: white;
+}
+
+.BarraSuperior__link {
+  font-size: 1.5rem;
 }
