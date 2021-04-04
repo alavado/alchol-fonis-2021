@@ -5,10 +5,13 @@ import './ListaPacientes.css'
 
 const ListaPacientes = () => {
 
-  const { data, loading, error } = useQuery(usersQuery, { variables: { role: '60691be847ed5666b559e70f' } })
+  const { data, loading, error } = useQuery(usersQuery,
+    { variables: { role: '60691be847ed5666b559e70f' },
+    fetchPolicy: 'no-cache'
+  })
 
   if (loading) {
-    return null
+    return 'Cargando...'
   }
 
   return (

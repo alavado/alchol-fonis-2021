@@ -8,7 +8,7 @@ const Pacientes = () => {
   return (
     <div className="Pacientes">
       <Switch>
-        <Route path="/pacientes/agregar/:id_paciente">
+        <Route path="/pacientes/agregar">
           <NuevoPaciente />
         </Route>
         <Route path="/pacientes/:id">

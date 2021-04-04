@@ -10,6 +10,9 @@ const Registro = () => {
         <Route path="/registro/nuevo/:idPaciente">
           <NuevoRegistro />
         </Route>
+        <Route path="/registro/nuevo/:idPaciente/:paso">
+          <NuevoRegistro />
+        </Route>
         <Route path="/registro">
           <SeleccionPaciente />
         </Route>

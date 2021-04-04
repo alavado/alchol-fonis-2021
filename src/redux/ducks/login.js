@@ -1,6 +1,4 @@
 import { decode } from 'jsonwebtoken'
-
-
 import { createSlice } from '@reduxjs/toolkit'
 
 const loginSlice = createSlice({
