@@ -3,7 +3,9 @@ import AcercaDe from './AcercaDe'
 import BarraSuperior from './BarraSuperior'
 import Inicio from './Inicio'
 import Menu from './Menu'
+import Pacientes from './Pacientes'
 import './Plataforma.css'
+import Registro from './Registro'
 
 const Plataforma = () => {
 
@@ -14,6 +16,12 @@ const Plataforma = () => {
       <Switch>
         <Route path="/acerca">
           <AcercaDe />
+        </Route>
+        <Route path="/pacientes">
+          <Pacientes />
+        </Route>
+        <Route path="/registro">
+          <Registro />
         </Route>
         <Route>
           <Inicio />

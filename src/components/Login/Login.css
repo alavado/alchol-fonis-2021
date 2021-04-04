@@ -34,8 +34,8 @@
 
 .Login__boton {
   font-size: 2rem;
-  height: 4rem;
-  border: none;
+  height: 5rem;
   border-radius: 9in;
   background-color: var(--color-principal);
+  color: white;
 }

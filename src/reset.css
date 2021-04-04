@@ -58,3 +58,9 @@ a {
 :root {
 	font-size: 1vmax;
 }
+
+button {
+	background: none;
+	border: none;
+  cursor: pointer;
+}

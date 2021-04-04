@@ -1,5 +1,6 @@
-import { Icon } from '@iconify/react'
+import { Icon, InlineIcon } from '@iconify/react'
 import menuIcon from '@iconify-icons/mdi/menu'
+import iconoAcercaDe from '@iconify-icons/mdi/about'
 import './BarraSuperior.css'
 import { Link } from 'react-router-dom'
 import { muestraMenu } from '../../../redux/ducks/menu'
@@ -24,7 +25,9 @@ const BarraSuperior = () => {
         </button>
         <h1 className="BarraSuperior__titulo">Demo FONIS 2021</h1>
       </div>
-      <Link className="BarraSuperior__link" to="/acerca">Acerca de</Link>
+      <Link className="BarraSuperior__link" to="/acerca">
+        <InlineIcon icon={iconoAcercaDe} />
+      </Link>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import rootReducer from './ducks/index'
 
 // los que se guardan en el localStorage
 // const states = ['opciones', 'login', 'encuestas']
-const states = []
+const states = ['menu']
 
 const createStoreWithMiddleware = applyMiddleware(save({ states }))(createStore)
 

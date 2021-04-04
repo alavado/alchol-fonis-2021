@@ -11,6 +11,8 @@ const Menu = () => {
   const dispatch = useDispatch()
   const { visible } = useSelector(state => state.menu)
 
+  const cerrarMenu = () => dispatch(muestraMenu(false))
+
   return (
     <div
       className={classNames({
@@ -20,12 +22,13 @@ const Menu = () => {
     >
       <button
         className="Menu__boton_cerrar"
-        onClick={() => dispatch(muestraMenu(false))}
+        onClick={cerrarMenu}
       >
         <Icon icon={iconoCerrar} />
       </button>
-      <Link className="Menu__link" to="/">Inicio</Link>
-      <Link className="Menu__link" to="/">Nuevo registro</Link>
+      <Link onClick={cerrarMenu} className="Menu__link" to="/">Inicio</Link>
+      <Link onClick={cerrarMenu} className="Menu__link" to="/pacientes">Pacientes</Link>
+      <Link onClick={cerrarMenu} className="Menu__link" to="/registro">Nuevo registro</Link>
     </div>
   )
 }

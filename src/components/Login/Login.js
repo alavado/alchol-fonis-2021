@@ -7,8 +7,8 @@ import './Login.css'
 
 const Login = () => {
 
-  const [usuario, setUsuario] = useState()
-  const [password, setPassword] = useState()
+  const [usuario, setUsuario] = useState('fonis2021@prueba.cl')
+  const [password, setPassword] = useState('fonis2021')
   const [loginMutate, { loading: loginLoading, error: loginError }] = useMutation(loginMutation)
   const dispatch = useDispatch()
 
@@ -25,11 +25,11 @@ const Login = () => {
       <form className="Login__formulario" onSubmit={login}>
         <label className="Login__label">
           Usuario:
-          <input className="Login__input" onChange={e => setUsuario(e.target.value)} />
+          <input className="Login__input" defaultValue={usuario} onChange={e => setUsuario(e.target.value)} />
         </label>
         <label className="Login__label">
           Contraseña:
-          <input className="Login__input" type="password" onChange={e => setPassword(e.target.value)} />
+          <input className="Login__input" defaultValue={password} type="password" onChange={e => setPassword(e.target.value)} />
         </label>
         <button className="Login__boton" type="submit">Ingresar</button>
         {loginLoading && 'Ingresando...'}
