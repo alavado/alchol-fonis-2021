@@ -3,18 +3,19 @@ import menuIcon from '@iconify-icons/mdi/menu'
 import './BarraSuperior.css'
 import { Link } from 'react-router-dom'
 import { muestraMenu } from '../../../redux/ducks/menu'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const BarraSuperior = () => {
 
   const dispatch = useDispatch()
+  const { visible } = useSelector(state => state.menu)
 
   return (
     <div className="BarraSuperior">
       <div className="BarraSuperior__izquierda">
         <button
           className="BarraSuperior__boton_menu"
-          onClick={() => dispatch(muestraMenu(true))}
+          onClick={() => dispatch(muestraMenu(!visible))}
         >
           <Icon
             className="BarraSuperior__icono_menu"

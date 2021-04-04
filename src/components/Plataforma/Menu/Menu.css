@@ -2,12 +2,37 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, .7);
+  background: rgba(255, 255, 255, .9);
   width: 100vw;
   height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-size: 3rem;
+  transition: all .25s ease;
+  left: -100%;
+  z-index: 2;
+  padding-top: 4rem;
+}
+
+.Menu--visible {
+  left: 0;
+}
+
+.Menu__boton_cerrar {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 4rem;
+  color: var(--color-texto);
+  background: none;
+  border: none;
+}
+
+.Menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  color: var(--color-texto);
 }

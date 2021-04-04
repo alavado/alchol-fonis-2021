@@ -3,6 +3,6 @@
   --color-texto: #212121;
 }
 
-*, *::before, *::after {
+body {
   color: var(--color-texto);
 }
