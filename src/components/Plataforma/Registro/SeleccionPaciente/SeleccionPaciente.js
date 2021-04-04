@@ -6,7 +6,7 @@ const SeleccionPaciente = () => {
     <div className="SeleccionPaciente">
       <h2>Nuevo registro</h2>
       <Link to="/pacientes/agregar">Paciente nuevo</Link>
-      <Link to="/registro/nuevo">Paciente existente</Link>
+      <Link to="/pacientes">Paciente existente</Link>
     </div>
   )
 }

@@ -1,17 +1,27 @@
 import { useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
-import rolesQuery from '../../../../graphql/queries/roles'
+import usersQuery from '../../../../graphql/queries/users'
 import './ListaPacientes.css'
 
 const ListaPacientes = () => {
 
-  const { data, loading, error } = useQuery(rolesQuery)
+  const { data, loading, error } = useQuery(usersQuery, { variables: { role: '60691be847ed5666b559e70f' } })
 
-  console.log(data)
+  if (loading) {
+    return null
+  }
 
   return (
     <div className="ListaPacientes">
-      lista de pacientes
+      <h2>Seleccione un paciente</h2>
+      {data.users.map((paciente, i) => (
+        <div className="ListaPacientes__fila" key={`fila-paciente-${i}`}>
+          <Link to={`/pacientes/${paciente.id}`}>
+            <div>{paciente.peso}</div>
+            <div>{paciente.sexo}</div>
+          </Link>
+        </div>
+      ))}
       <Link to="/pacientes/agregar">Nuevo paciente</Link>
     </div>
   )

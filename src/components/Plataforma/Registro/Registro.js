@@ -7,7 +7,7 @@ const Registro = () => {
   return (
     <div className="Registro">
       <Switch>
-        <Route path="/registro/nuevo">
+        <Route path="/registro/nuevo/:idPaciente">
           <NuevoRegistro />
         </Route>
         <Route path="/registro">
