@@ -40,7 +40,7 @@ const NuevoPaciente = () => {
   return (
     <div className="NuevoPaciente">
       <h2>Ingrese datos paciente</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="NuevoPaciente__formulario" onSubmit={handleSubmit}>
         <label>
           Sexo
           <select value={sexo} onChange={e => setSexo(e.target.value)}>
@@ -52,7 +52,7 @@ const NuevoPaciente = () => {
           Peso
           <input type="number" value={peso} onChange={e => setPeso(e.target.value)} />
         </label>
-        <button type="submit">
+        <button className="NuevoPaciente__boton" type="submit">
           Registrar paciente
         </button>
       </form>

@@ -1,0 +1,28 @@
+.NuevoPaciente {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  margin: 4rem;
+  gap: 2rem;
+}
+
+.NuevoPaciente__boton {
+  background: var(--color-principal);
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 5rem;
+  border-radius: 1in;
+}
+
+.NuevoPaciente__formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.NuevoPaciente__formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

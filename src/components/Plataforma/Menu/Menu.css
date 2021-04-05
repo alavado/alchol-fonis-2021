@@ -11,7 +11,7 @@
   font-size: 3rem;
   transition: left .25s ease;
   left: -100%;
-  z-index: 2;
+  z-index: 10;
   padding-top: 4rem;
   box-shadow: none;
 }
