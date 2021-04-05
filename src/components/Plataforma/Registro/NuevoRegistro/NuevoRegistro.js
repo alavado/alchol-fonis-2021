@@ -1,10 +1,10 @@
 import { Switch, Route, useRouteMatch } from 'react-router'
-import './NuevoRegistro.css'
 import SeleccionDias from './SeleccionDias'
 import { Link } from 'react-router-dom'
 import Agradecimientos from './Agradecimientos'
 import ConfirmacionSemanal from './ConfirmacionSemanal'
 import IngresoDosisDiaria from './IngresoDosisDiaria'
+import './NuevoRegistro.css'
 
 const NuevoRegistro = () => {
 
@@ -26,11 +26,10 @@ const NuevoRegistro = () => {
           <Agradecimientos />
         </Route>
         <Route>
-          <h2>Nuevo registro</h2>
-          NuevoRegistro para paciente {idPaciente}
+          <h2>Registrando paciente<br />id: {idPaciente}</h2>
           Entregue dispositivo a paciente
-          <Link to={`/registro/nuevo/${idPaciente}/calendario`}>
-            Comenzar
+          <Link className="NuevoRegistro__boton" to={`/registro/nuevo/${idPaciente}/calendario`}>
+            Aceptar
           </Link>
         </Route>
       </Switch>

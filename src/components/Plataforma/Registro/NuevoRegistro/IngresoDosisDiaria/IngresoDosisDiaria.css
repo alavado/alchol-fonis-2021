@@ -1,0 +1,80 @@
+.IngresoDosisDiaria {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  margin: 3rem;
+  width: calc(100% - 6rem);
+  gap: 4rem;
+}
+
+.IngresoDosisDiaria__titulo_categoria {
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 2rem;
+  border-bottom: 1px solid #bebebe;
+}
+
+.IngresoDosisDiaria__contenedor_categoria {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 4rem;
+}
+
+.IngresoDosisDiaria__trago {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.IngresoDosisDiaria__contenedor_imagen_trago {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.IngresoDosisDiaria__imagen_trago {
+  object-fit: contain;
+  height: 8rem;
+}
+
+.IngresoDosisDiaria__nombre_trago {
+  font-size: 2.5rem;
+  height: 2rem;
+  text-align: center;
+}
+
+.IngresoDosisDiaria__contenedor_contador {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.IngresoDosisDiaria__contador {
+  font-size: 6rem;
+  font-weight: 500;
+}
+
+.IngresoDosisDiaria__boton_contador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.IngresoDosisDiaria__boton_siguiente {
+  background: var(--color-principal);
+  color: white;
+  font-size: 2.5rem;
+  padding: 1rem 3rem;
+  border-radius: 1in;
+  align-self: flex-end;
+  margin-top: 5rem;
+}
+
+.IngresoDosisDiaria__icono_siguiente {
+  margin-left: 1rem;
+}

@@ -1,0 +1,60 @@
+.ConfirmacionSemanal {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 8rem);
+  margin: 4rem;
+  flex: 1;
+}
+
+.ConfirmacionSemanal__titulo {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.ConfirmacionSemanal__bajada {
+  font-size: 2rem;
+}
+
+.ConfirmacionSemanal__contenedor_dias {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.ConfirmacionSemanal__fila_dia {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8rem;
+  padding: 1rem;
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, .25);
+}
+
+.ConfirmacionSemanal__nombre_dia {
+  display: flex;
+  align-items: center;
+  width: 12rem;
+  font-size: 2rem;
+}
+
+.ConfirmacionSemanal__imagenes_tragos {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-end;
+}
+
+.ConfirmacionSemanal__icono_trago {
+  width: 3rem;
+}
+
+.ConfirmacionSemanal__boton_siguiente {
+  background: var(--color-principal);
+  color: white;
+  font-size: 2.5rem;
+  padding: 1rem 3rem;
+  border-radius: 1in;
+  align-self: flex-end;
+  margin-top: 5rem;
+}

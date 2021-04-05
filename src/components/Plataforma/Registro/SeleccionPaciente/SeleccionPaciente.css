@@ -1,0 +1,17 @@
+.SeleccionPaciente {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.SeleccionPaciente__opcion {
+  background: var(--color-principal);
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 5rem;
+  border-radius: 1in;
+}

@@ -1,0 +1,15 @@
+.Agradecimientos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem;
+}
+
+.Agradecimientos__boton {
+  background: var(--color-principal);
+  color: white;
+  font-size: 2.5rem;
+  padding: 1rem 3rem;
+  border-radius: 1in;
+  margin-top: 5rem;
+}

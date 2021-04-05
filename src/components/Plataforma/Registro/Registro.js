@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router'
 import NuevoRegistro from './NuevoRegistro'
 import SeleccionPaciente from './SeleccionPaciente'
+import './Registro.css'
 
 const Registro = () => {
   return (

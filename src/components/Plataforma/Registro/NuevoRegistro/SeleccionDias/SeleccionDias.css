@@ -1,0 +1,36 @@
+.SeleccionDias {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.SeleccionDias__contenedor_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  flex: 1;
+  margin-top: 3rem;
+}
+
+.SeleccionDias__label {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+
+.SeleccionDias__boton_siguiente {
+  background: var(--color-principal);
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 5rem;
+  border-radius: 1in;
+  margin: 2rem;
+  align-self: flex-end;
+}
+
+.SeleccionDias input[type=checkbox] {
+  transform: scale(3);
+  margin-right: 2rem;
+}

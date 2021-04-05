@@ -9,7 +9,7 @@ const FichaPaciente = () => {
   return (
     <div className="FichaPaciente">
       Paciente {id}
-      <Link to={`/registro/nuevo/${id}`}>Agregar registro</Link>
+      <Link to={`/registro/nuevo/${id}`}>Comenzar registro</Link>
     </div>
   )
 }

@@ -16,16 +16,18 @@ const ListaPacientes = () => {
 
   return (
     <div className="ListaPacientes">
-      <h2>Seleccione un paciente</h2>
+      <div className="ListaPacientes__superior">
+        <p className="ListaPacientes__instruccion">Seleccione paciente</p>
+        <Link className="ListaPacientes__link_nuevo_paciente" to="/pacientes/agregar">Nuevo paciente</Link>
+      </div>
       {data.users.map((paciente, i) => (
-        <div className="ListaPacientes__fila" key={`fila-paciente-${i}`}>
-          <Link to={`/pacientes/${paciente.id}`}>
-            <div>{paciente.peso}</div>
-            <div>{paciente.sexo}</div>
-          </Link>
-        </div>
+        <Link key={`fila-paciente-${i}`} to={`/pacientes/${paciente.id}`}>
+          <div className="ListaPacientes__fila">
+            <div>Sexo: {paciente.sexo}</div>
+            <div>Peso: {paciente.peso} kg</div>
+          </div>
+        </Link>
       ))}
-      <Link to="/pacientes/agregar">Nuevo paciente</Link>
     </div>
   )
 }

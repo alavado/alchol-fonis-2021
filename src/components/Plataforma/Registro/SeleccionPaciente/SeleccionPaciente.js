@@ -5,8 +5,8 @@ const SeleccionPaciente = () => {
   return (
     <div className="SeleccionPaciente">
       <h2>Nuevo registro</h2>
-      <Link to="/pacientes/agregar">Paciente nuevo</Link>
-      <Link to="/pacientes">Paciente existente</Link>
+      <Link className="SeleccionPaciente__opcion" to="/pacientes/agregar">Paciente nuevo</Link>
+      <Link className="SeleccionPaciente__opcion" to="/pacientes">Paciente existente</Link>
     </div>
   )
 }
