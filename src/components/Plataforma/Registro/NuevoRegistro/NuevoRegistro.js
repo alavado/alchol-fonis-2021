@@ -26,7 +26,7 @@ const NuevoRegistro = () => {
           <Agradecimientos />
         </Route>
         <Route>
-          <h2>Registrando paciente<br />id: {idPaciente}</h2>
+          <h2 style={{ marginTop: '4rem' }}>Registrando paciente<br />id: {idPaciente}</h2>
           Entregue dispositivo a paciente
           <Link className="NuevoRegistro__boton" to={`/registro/nuevo/${idPaciente}/calendario`}>
             Aceptar
