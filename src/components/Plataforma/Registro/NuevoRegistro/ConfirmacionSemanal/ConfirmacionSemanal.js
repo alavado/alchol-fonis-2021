@@ -15,22 +15,29 @@ const ConfirmacionSemanal = () => {
       <h3 className="ConfirmacionSemanal__titulo">Resumen de su consumo</h3>
       <p className="ConfirmacionSemanal__bajada">Por favor revise y corrija si encuentra algún error</p>
       <div className="ConfirmacionSemanal__contenedor_dias">
-        {tragos.map((tragosDia, i) => (
-          <div className="ConfirmacionSemanal__fila_dia" key={`resumen-tragos-dia-${i}`}>
-            <div className="ConfirmacionSemanal__nombre_dia">
-              {format(subDays(new Date(), 7 - i), 'iiii', { locale: es })}
-              {i === 0 ? ' pasado' : i === 6 ? ' (ayer)' : ''}
+        {tragos.map((tragosDia, i) => {
+          const tragosEstandar = tragosDia.reduce((sum, t) => sum + t.cantidad * t.tragos, 0)
+          return (
+            <div className="ConfirmacionSemanal__fila_dia" key={`resumen-tragos-dia-${i}`}>
+              <div className="ConfirmacionSemanal__nombre_dia">
+                {format(subDays(new Date(), 7 - i), 'iiii', { locale: es })}
+                {i === 0 ? ' pasado' : i === 6 ? ' (ayer)' : ''}
+              </div>
+              <div className="ConfirmacionSemanal__imagenes_tragos">
+                {tragosDia.map(trago => {
+                  const { cantidad } = trago
+                  return cantidad > 0
+                    ? Array(cantidad).fill(<img className="ConfirmacionSemanal__icono_trago" alt={trago.nombre} src={trago.imagen} />)
+                    : null
+                })}
+              </div>
+              {tragosEstandar > 0 && (
+                <div className="ConfirmacionSemanal__tragos_dia">
+                  {tragosEstandar} TRAGOS estándar
+                </div>
+              )}
             </div>
-            <div className="ConfirmacionSemanal__imagenes_tragos">
-              {tragosDia.map(trago => {
-                const { cantidad } = trago
-                return cantidad > 0
-                  ? Array(cantidad).fill(<img className="ConfirmacionSemanal__icono_trago" alt={trago.nombre} src={trago.imagen} />)
-                  : null
-              })}
-            </div>
-          </div>
-        ))}
+          )})}
       </div>
       <Link className="ConfirmacionSemanal__boton_siguiente" to="/registro/nuevo/recomendacion">
         Confirmar <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoSiguiente} />

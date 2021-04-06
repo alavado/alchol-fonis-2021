@@ -7,8 +7,9 @@
 }
 
 .Recomendacion__titulo {
-  margin-top: 4rem;
+  margin-top: 5rem;
   font-size: 4rem;
+  font-weight: 600;
 }
 
 .Recomendacion__prefacio_numero_tragos {
