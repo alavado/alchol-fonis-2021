@@ -1,0 +1,41 @@
+.Recomendacion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.Recomendacion__titulo {
+  margin-top: 4rem;
+  font-size: 4rem;
+}
+
+.Recomendacion__prefacio_numero_tragos {
+  width: 15ch;
+  text-align: center;
+}
+
+.Recomendacion__imagen_recomendacion {
+  max-width: 95vw;
+}
+
+.Recomendacion__boton_siguiente {
+  background: var(--color-principal);
+  color: white;
+  font-size: 2.5rem;
+  padding: 1rem 3rem;
+  border-radius: 1in;
+  margin-top: 5rem;
+}
+
+.Recomendacion__numero_tragos {
+  font-size: 12rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.Recomendacion__sufijo_numero_tragos {
+  font-weight: bold;
+  font-size: 4rem;
+}

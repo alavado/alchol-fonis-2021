@@ -4,10 +4,10 @@ const Piramide = () => {
   return (
     <div className="Piramide">
       <p className="Piramide__indicador_paciente">
-        Su resultado esta semana
+        Este es su nivel de riesgo
       </p>
       <p className="Piramide__indicador_paciente Piramide__indicador_paciente--anterior">
-        Su resultado anterior
+        9 de cada 10 personas de su edad consumen menos alcohol que usted en una semana típica
       </p>
       <div className="Piramide__nivel_1">
         <p className="Piramide__etiqueta_nivel">Posible consumo problema o dependencia (2%)</p>

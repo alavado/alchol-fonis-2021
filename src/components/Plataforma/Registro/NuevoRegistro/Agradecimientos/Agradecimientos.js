@@ -5,7 +5,7 @@ import Piramide from './Piramide'
 const Agradecimientos = () => {
   return (
     <div className="Agradecimientos">
-      <p>¡Gracias por responder!</p>
+      <p>Su nivel de riesgo comparado con la población general</p>
       <div className="Agredecimientos__contenedor_piramide">
         <Piramide />
       </div>

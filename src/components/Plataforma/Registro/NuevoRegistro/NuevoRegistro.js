@@ -5,6 +5,7 @@ import Agradecimientos from './Agradecimientos'
 import ConfirmacionSemanal from './ConfirmacionSemanal'
 import IngresoDosisDiaria from './IngresoDosisDiaria'
 import './NuevoRegistro.css'
+import Recomendacion from './Recomendacion'
 
 const NuevoRegistro = () => {
 
@@ -21,6 +22,9 @@ const NuevoRegistro = () => {
         </Route>
         <Route path="/registro/nuevo/:idPaciente/confirmacion">
           <ConfirmacionSemanal />
+        </Route>
+        <Route path="/registro/nuevo/recomendacion">
+          <Recomendacion />
         </Route>
         <Route path="/registro/nuevo/gracias">
           <Agradecimientos />

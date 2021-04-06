@@ -32,7 +32,7 @@ const ConfirmacionSemanal = () => {
           </div>
         ))}
       </div>
-      <Link className="ConfirmacionSemanal__boton_siguiente" to="/registro/nuevo/gracias">
+      <Link className="ConfirmacionSemanal__boton_siguiente" to="/registro/nuevo/recomendacion">
         Confirmar <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoSiguiente} />
       </Link>
     </div>
