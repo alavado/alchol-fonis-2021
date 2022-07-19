@@ -5,6 +5,7 @@ import './BarraSuperior.css'
 import { Link } from 'react-router-dom'
 import { muestraMenu } from '../../../redux/ducks/menu'
 import { useDispatch, useSelector } from 'react-redux'
+import logoUC from '../../../assets/images/logo_uc_color.svg'
 
 const BarraSuperior = () => {
 
@@ -23,7 +24,10 @@ const BarraSuperior = () => {
             icon={menuIcon}
           />
         </button>
-        <h1 className="BarraSuperior__titulo">Demo FONIS 2021</h1>
+        <h1 className="BarraSuperior__titulo">
+          <img src={logoUC} alt="Logo Pontificia Universidad Católica de Chile" />
+          FONIS 2021
+        </h1>
       </div>
       <Link className="BarraSuperior__link" to="/acerca">
         <InlineIcon icon={iconoAcercaDe} />

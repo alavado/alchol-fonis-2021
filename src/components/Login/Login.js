@@ -21,7 +21,7 @@ const Login = () => {
 
   return (
     <div className="Login">
-      <h1 className="Login__logo">Demo FONIS 2021</h1>
+      <h1 className="Login__logo">FONIS 2021</h1>
       <form className="Login__formulario" onSubmit={login}>
         <label className="Login__label">
           Usuario:
