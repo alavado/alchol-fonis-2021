@@ -11,7 +11,7 @@
 .IngresoDosisDiaria__titulo_categoria {
   width: 100%;
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
   border-bottom: 1px solid #bebebe;
 }
 
@@ -19,7 +19,17 @@
   display: flex;
   flex-wrap: wrap;
   flex: 1;
-  gap: 4rem;
+  gap: 3rem;
+}
+
+.IngresoDosisDiaria__titulo {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.IngresoDosisDiaria__titulo strong {
+  margin-left: 1rem;
 }
 
 .IngresoDosisDiaria__trago {
@@ -72,7 +82,6 @@
   padding: 1rem 3rem;
   border-radius: 1in;
   align-self: flex-end;
-  margin-top: 5rem;
 }
 
 .IngresoDosisDiaria__icono_siguiente {

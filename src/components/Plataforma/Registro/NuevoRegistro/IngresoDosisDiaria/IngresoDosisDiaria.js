@@ -15,7 +15,7 @@ const IngresoDosisDiaria = () => {
   const dispatch = useDispatch()
   const history = useHistory()
 
-  if (+dia >= 7) {
+  if (+dia > 7) {
     history.push(`/registro/nuevo/${idPaciente}/confirmacion`)
     return null
   }
@@ -25,11 +25,13 @@ const IngresoDosisDiaria = () => {
     return null
   }
 
-  const categoriasTragos = Array.from(new Set(tragos[dia].map(t => t.categoria)))
+  const categoriasTragos = Array.from(new Set(tragos[dia - 1].map(t => t.categoria)))
 
   return (
     <div className="IngresoDosisDiaria">
-      <p>¿Cuánto bebió el <span style={{ fontWeight: 'bold' }}>{format(subDays(new Date(), 7 - (+dia - 1)), 'iiii', { locale: es })}</span>?</p>
+      <p className="IngresoDosisDiaria__titulo">
+        ¿Cuánto bebió el <strong style={{ fontWeight: 'bold' }}>{format(subDays(new Date(), 7 - (+dia - 1)), 'iiii', { locale: es })}</strong>?
+      </p>
       {categoriasTragos.map(categoria => (
         <div
           className="IngresoDosisDiaria__contenedor_categoria"
@@ -65,8 +67,8 @@ const IngresoDosisDiaria = () => {
           ))}
         </div>
       ))}
-      <Link className="IngresoDosisDiaria__boton_siguiente" to={`/registro/nuevo/${idPaciente}/pregunta/${+dia + 1}`}>
-        Siguiente <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoSiguiente} />
+      <Link className="IngresoDosisDiaria__boton_siguiente" to={`/registro/nuevo/${idPaciente}/confirmacion`}>
+        Confirmar <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoSiguiente} />
       </Link>
     </div>
   )

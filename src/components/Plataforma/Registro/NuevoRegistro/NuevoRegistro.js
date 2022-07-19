@@ -32,7 +32,7 @@ const NuevoRegistro = () => {
         <Route>
           <h2 style={{ marginTop: '4rem' }}>Registrando paciente<br />id: {idPaciente}</h2>
           Entregue dispositivo a paciente
-          <Link className="NuevoRegistro__boton" to={`/registro/nuevo/${idPaciente}/calendario`}>
+          <Link className="NuevoRegistro__boton" to={`/registro/nuevo/${idPaciente}/confirmacion`}>
             Aceptar
           </Link>
         </Route>

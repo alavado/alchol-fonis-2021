@@ -4,7 +4,7 @@ import { tragos } from '../../data/tragos'
 const menuSlice = createSlice({
   name: 'registro',
   initialState: {
-    dias: Array(7).fill(false),
+    dias: Array(7).fill(true),
     tragos: Array(7).fill(tragos.map(t => ({
       ...t,
       cantidad: 0
