@@ -29,9 +29,9 @@ const BarraSuperior = () => {
           FONIS 2021
         </h1>
       </div>
-      <Link className="BarraSuperior__link" to="/acerca">
+      {/* <Link className="BarraSuperior__link" to="/acerca">
         <InlineIcon icon={iconoAcercaDe} />
-      </Link>
+      </Link> */}
     </div>
   )
 }
