@@ -6,6 +6,7 @@ import ConfirmacionSemanal from './ConfirmacionSemanal'
 import IngresoDosisDiaria from './IngresoDosisDiaria'
 import './NuevoRegistro.css'
 import Recomendacion from './Recomendacion'
+import BienvenidaPaciente from '../BienvenidaPaciente'
 
 const NuevoRegistro = () => {
 
@@ -14,6 +15,9 @@ const NuevoRegistro = () => {
   return (
     <div className="NuevoRegistro">
       <Switch>
+        <Route path="/registro/bienvenida-paciente/:idPaciente">
+          <BienvenidaPaciente />
+        </Route>
         <Route path="/registro/nuevo/:idPaciente/calendario">
           <SeleccionDias />
         </Route>
@@ -32,7 +36,7 @@ const NuevoRegistro = () => {
         <Route>
           <h2 style={{ marginTop: '4rem' }}>Registrando paciente<br />id: {idPaciente}</h2>
           Entregue dispositivo a paciente
-          <Link className="NuevoRegistro__boton" to={`/registro/nuevo/${idPaciente}/confirmacion`}>
+          <Link className="NuevoRegistro__boton" to={`/registro/bienvenida-paciente/${idPaciente}`}>
             Aceptar
           </Link>
         </Route>

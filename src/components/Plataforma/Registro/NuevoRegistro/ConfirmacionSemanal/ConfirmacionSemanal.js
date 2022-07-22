@@ -5,6 +5,7 @@ import { es } from 'date-fns/locale'
 import './ConfirmacionSemanal.css'
 import { InlineIcon } from '@iconify/react'
 import iconoSiguiente from '@iconify-icons/mdi/chevron-right'
+import iconoCalendario from '@iconify-icons/mdi/calendar-week'
 
 const ConfirmacionSemanal = () => {
 
@@ -14,7 +15,7 @@ const ConfirmacionSemanal = () => {
 
   return (
     <div className="ConfirmacionSemanal">
-      <h3 className="ConfirmacionSemanal__titulo">Ingrese su consumo durante la última semana</h3>
+      <h3 className="ConfirmacionSemanal__titulo">Mi consumo de alcohol en la última semana</h3>
       <p className="ConfirmacionSemanal__bajada">Seleccione los días que corresponda</p>
       <div className="ConfirmacionSemanal__contenedor_dias">
         {tragos.map((tragosDia, i) => {
@@ -26,14 +27,14 @@ const ConfirmacionSemanal = () => {
               onClick={() => history.push(`/registro/nuevo/${idPaciente}/pregunta/${i + 1}`)}
             >
               <div className="ConfirmacionSemanal__nombre_dia">
-                📅 {format(subDays(new Date(), 7 - i), 'iiii', { locale: es })}
+                <InlineIcon icon={iconoCalendario} style={{ marginRight: '.5rem' }} /> {format(subDays(new Date(), 7 - i), 'iiii', { locale: es })}
                 {i === 0 ? ' pasado' : i === 6 ? ' (ayer)' : ''}
               </div>
               <div className="ConfirmacionSemanal__imagenes_tragos">
-                {tragosDia.map(trago => {
+                {tragosDia.map((trago, j) => {
                   const { cantidad } = trago
                   return cantidad > 0
-                    ? Array(cantidad).fill(<img className="ConfirmacionSemanal__icono_trago" alt={trago.nombre} src={trago.imagen} />)
+                    ? [...Array(cantidad)].map((_, k) => <img key={`trago-${i}-${j}-${k}`} className="ConfirmacionSemanal__icono_trago" alt={trago.nombre} src={trago.imagen} />)
                     : null
                 })}
               </div>
