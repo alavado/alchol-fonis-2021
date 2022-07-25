@@ -1,22 +1,37 @@
 import { useSelector } from 'react-redux'
-import { Link, useHistory, useRouteMatch } from 'react-router-dom'
+import { useHistory, useRouteMatch } from 'react-router-dom'
 import { format, subDays } from 'date-fns'
 import { es } from 'date-fns/locale'
 import './ConfirmacionSemanal.css'
 import { InlineIcon } from '@iconify/react'
 import iconoSiguiente from '@iconify-icons/mdi/chevron-right'
 import iconoCalendario from '@iconify-icons/mdi/calendar-week'
+import iconoCancelar from '@iconify-icons/mdi/close'
+import iconoConfirmar from '@iconify-icons/mdi/check'
+import { useState } from 'react'
 
 const ConfirmacionSemanal = () => {
 
   const { tragos } = useSelector(state => state.registro)
+  const [mostrarConfirmacion, setMostrarConfirmacion] = useState(false)
   const { idPaciente } = useRouteMatch().params
   const history = useHistory()
+
+  const avanzar = () => {
+    setMostrarConfirmacion(true)
+    // history.push('/registro/nuevo/recomendacion')
+  }
+
+  const enviarDatos = () => {
+    history.push('/registro/nuevo/recomendacion')
+  }
 
   return (
     <div className="ConfirmacionSemanal">
       <h3 className="ConfirmacionSemanal__titulo">Mi consumo de alcohol en la última semana</h3>
-      <p className="ConfirmacionSemanal__bajada">Seleccione los días que corresponda</p>
+      <p className="ConfirmacionSemanal__bajada">
+        Rellene los días y presione "Confirmar"
+      </p>
       <div className="ConfirmacionSemanal__contenedor_dias">
         {tragos.map((tragosDia, i) => {
           const tragosEstandar = tragosDia.reduce((sum, t) => sum + t.cantidad * t.tragos, 0)
@@ -46,9 +61,29 @@ const ConfirmacionSemanal = () => {
             </div>
           )})}
       </div>
-      <Link className="ConfirmacionSemanal__boton_siguiente" to="/registro/nuevo/recomendacion">
-        Confirmar <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoSiguiente} />
-      </Link>
+      {mostrarConfirmacion
+        ? <div className="ConfirmacionSemanal__contenedor_botones_confirmacion">
+            <p>Por favor revise que lo ingresado es correcto</p>
+            <button
+              className="ConfirmacionSemanal__boton_siguiente"
+              onClick={() => setMostrarConfirmacion(false)}
+            >
+              Me faltó algo <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoCancelar} />
+            </button>
+            <button
+              className="ConfirmacionSemanal__boton_siguiente"
+              onClick={enviarDatos}
+            >
+              Terminé de ingresar <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoConfirmar} />
+            </button>
+          </div>
+        : <button
+            className="ConfirmacionSemanal__boton_siguiente"
+            onClick={avanzar}
+          >
+            Confirmar <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoSiguiente} />
+          </button>
+      }
     </div>
   )
 }
