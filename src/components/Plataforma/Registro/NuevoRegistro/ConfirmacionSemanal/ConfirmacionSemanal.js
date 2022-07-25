@@ -9,6 +9,13 @@ import iconoCalendario from '@iconify-icons/mdi/calendar-week'
 import iconoCancelar from '@iconify-icons/mdi/close'
 import iconoConfirmar from '@iconify-icons/mdi/check'
 import { useState } from 'react'
+import { useMutation } from '@apollo/react-hooks'
+import registrarAuditMutation from '../../../../../graphql/mutations/agregarAudit'
+import _ from 'lodash'
+
+const sacarImagenes = dias => {
+  return dias.map(d => d.map(trago => _.omit(trago, 'imagen')))
+}
 
 const ConfirmacionSemanal = () => {
 
@@ -16,14 +23,20 @@ const ConfirmacionSemanal = () => {
   const [mostrarConfirmacion, setMostrarConfirmacion] = useState(false)
   const { idPaciente } = useRouteMatch().params
   const history = useHistory()
+  const [mutateRegistrarAudit, { loading }] = useMutation(registrarAuditMutation)
 
   const avanzar = () => {
     setMostrarConfirmacion(true)
-    // history.push('/registro/nuevo/recomendacion')
   }
 
   const enviarDatos = () => {
-    history.push('/registro/nuevo/recomendacion')
+    mutateRegistrarAudit({
+      variables: {
+        idPaciente,
+        datos: sacarImagenes(tragos)
+      }
+    })
+    .then(() => history.push('/registro/nuevo/recomendacion'))
   }
 
   return (
@@ -67,12 +80,14 @@ const ConfirmacionSemanal = () => {
             <button
               className="ConfirmacionSemanal__boton_siguiente"
               onClick={() => setMostrarConfirmacion(false)}
+              disabled={loading}
             >
               Me faltó algo <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoCancelar} />
             </button>
             <button
               className="ConfirmacionSemanal__boton_siguiente"
               onClick={enviarDatos}
+              disabled={loading}
             >
               Terminé de ingresar <InlineIcon className="IngresoDosisDiaria__icono_siguiente" icon={iconoConfirmar} />
             </button>

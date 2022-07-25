@@ -12,6 +12,10 @@ export default gql`
       id
       sexo
       peso
+      audits {
+        datos
+        createdAt
+      }
     }
   }
 `
