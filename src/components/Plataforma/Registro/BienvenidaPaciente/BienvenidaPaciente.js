@@ -7,8 +7,8 @@ const BienvenidaPaciente = () => {
 
   return (
     <div className="BienvenidaPaciente">
-      <p>Muchas gracias por tomarse unos minutos de su tiempo para esta investigación</p>
-      <p>A continuación le realizaremos unas sencillas preguntas sobre su consumo de bebidas que contienen alcohol en la última semana, y luego le entregaremos alguna información</p>
+      <p>Muchas gracias por su tiempo para esta investigación</p>
+      <p>Por favor rellene el siguiente calendario de consumo de alcohol</p>
       <Link className="BienvenidaPaciente__boton" to={`/registro/nuevo/${idPaciente}/confirmacion`}>
         Comenzar
       </Link>
