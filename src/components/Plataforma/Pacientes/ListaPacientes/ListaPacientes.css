@@ -15,20 +15,17 @@
 }
 
 .ListaPacientes__fila {
-  display: flex;
+  display: grid;
+  grid-template: repeat(4, 1fr) / 1fr 1fr;
+  place-items: center start;
   padding: 3rem;
   font-size: 2rem;
   box-shadow: .1rem .1rem .5rem rgba(0, 0, 0, .15);
   background-color: #fafafa;
 }
 
-.ListaPacientes__fila>div:first-child {
-  width: 25%;
+.ListaPacientes__fila > div:first-child {
   font-weight: 500;
-}
-
-.ListaPacientes__fila>div:nth-child(2) {
-  width: 15%;
 }
 
 .ListaPacientes__link_nuevo_paciente {
@@ -44,4 +41,6 @@
 .ListaPacientes__icono_fila {
   margin-left: auto;
   font-size: 3rem;
+  grid-row: span 4;
+  place-self: center center;
 }

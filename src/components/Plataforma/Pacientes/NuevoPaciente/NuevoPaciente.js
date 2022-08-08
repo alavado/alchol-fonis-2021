@@ -4,11 +4,13 @@ import registrarPacienteMutation from '../../../../graphql/mutations/registrarPa
 import './NuevoPaciente.css'
 import { useState } from 'react'
 import { useHistory } from 'react-router'
+import { format, parse } from 'date-fns'
 
 const NuevoPaciente = () => {
 
   const [peso, setPeso] = useState(60)
   const [sexo, setSexo] = useState('M')
+  const [fechaNacimiento, setFechaNacimiento] = useState('1990-01-01')
 
   const { data, loading, error } = useQuery(rolesQuery)
   const [mutateRegistrarPaciente] = useMutation(registrarPacienteMutation)
@@ -27,7 +29,7 @@ const NuevoPaciente = () => {
       variables: {
         sexo,
         peso: Number(peso),
-        fechaNacimiento: '1988-01-01',
+        fechaNacimiento,
         username: u,
         password: u,
         email: u + 'u@gmail.com',
@@ -47,6 +49,14 @@ const NuevoPaciente = () => {
             <option value="M">Masculino</option>
             <option value="F">Femenino</option>
           </select>
+        </label>
+        <label>
+          Fecha de nacimiento 
+          <input
+            type="date"
+            value={fechaNacimiento}
+            onChange={e => setFechaNacimiento(e.target.value)}
+          />
         </label>
         <label>
           Peso

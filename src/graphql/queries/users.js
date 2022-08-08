@@ -5,13 +5,16 @@ export default gql`
     $role: ID!
   ) {
     users (
-      where:{
+      where: {
         role: $role
       }
+      sort: "createdAt:desc"
     ) {
       id
       sexo
       peso
+      fechaNacimiento
+      createdAt
       audits {
         datos
         createdAt

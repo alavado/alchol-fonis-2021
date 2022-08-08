@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import usersQuery from '../../../../graphql/queries/users'
 import iconoSiguiente from '@iconify-icons/mdi/chevron-right'
 import './ListaPacientes.css'
+import { differenceInYears, formatDistanceToNow, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
 
 const ListaPacientes = () => {
 
@@ -25,10 +27,12 @@ const ListaPacientes = () => {
       {data.users.map((paciente, i) => (
         <Link key={`fila-paciente-${i}`} to={`/pacientes/${paciente.id}`}>
           <div className="ListaPacientes__fila">
-            <div>Paciente {i + 1}</div>
+            <div>Paciente {data.users.length - i}</div>
+            <Icon className="ListaPacientes__icono_fila" icon={iconoSiguiente} />
             <div>Sexo: {paciente.sexo}</div>
             <div>Peso: {paciente.peso} kg</div>
-            <Icon className="ListaPacientes__icono_fila" icon={iconoSiguiente} />
+            <div>Edad: {differenceInYears(Date.now(), parseISO(paciente.fechaNacimiento))} años</div>
+            <div>Registrado: hace {formatDistanceToNow(parseISO(paciente.createdAt), { locale: es })}</div>
           </div>
         </Link>
       ))}

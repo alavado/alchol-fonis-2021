@@ -1,4 +1,6 @@
 import { useQuery } from '@apollo/client'
+import { differenceInYears, formatDistanceToNow, parseISO } from 'date-fns'
+import { es } from 'date-fns/locale'
 import { useRouteMatch } from 'react-router'
 import { Link } from 'react-router-dom'
 import queryPaciente from '../../../../graphql/queries/user'
@@ -13,11 +15,15 @@ const FichaPaciente = () => {
     return 'Cargando...'
   }
 
+  const paciente = data.user
+
   return (
     <div className="FichaPaciente">
       <p>Paciente {id}</p>
-      <p>Sexo: {data.user.sexo}</p>
-      <p>Peso {data.user.peso} kg</p>
+      <p>Sexo: {paciente.sexo}</p>
+      <p>Peso: {paciente.peso} kg</p>
+      <div>Edad: {differenceInYears(Date.now(), parseISO(paciente.fechaNacimiento))} años</div>
+      <div>Registrado: hace {formatDistanceToNow(parseISO(paciente.createdAt), { locale: es })}</div>
       <Link className="FichaPaciente__boton" to={`/registro/nuevo/${id}`}>Comenzar registro</Link>
     </div>
   )

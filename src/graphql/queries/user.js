@@ -10,6 +10,8 @@ export default gql`
       id
       sexo
       peso
+      createdAt
+      fechaNacimiento
     }
   }
 `
