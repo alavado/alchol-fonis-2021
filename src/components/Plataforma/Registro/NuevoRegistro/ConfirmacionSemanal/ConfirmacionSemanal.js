@@ -32,7 +32,7 @@ const ConfirmacionSemanal = () => {
   const enviarDatos = () => {
     mutateRegistrarAudit({
       variables: {
-        idPaciente,
+        idUsuario: idPaciente,
         datos: sacarImagenes(tragos)
       }
     })
